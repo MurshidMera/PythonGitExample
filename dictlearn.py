@@ -11,3 +11,16 @@ instance={
     }
 
 }
+#Both ways to printing the values.
+#print(instance["id"])
+#print(instance.get("id"))
+##############
+instance["region"]="ap-south-1" # Adding the value to dictionary.
+print(instance)
+instance["state"]="stoped"
+print(instance)
+
+# printing the vlaue of  "pub_subnet": ["10.0.0.0/24", "10.0.1.0/24"]
+print(instance.get("vpc").get("pub_subnet")[0])
+#printing the value without get method of dictionary
+print(instance["vpc"]["pub_subnet"][0])
