@@ -5,6 +5,9 @@ class BankAccount:
         self.accno = accno
         self.balance = balance
 
+    def __del__(self):
+        print("Account is closed.")
+
     def show_details(self):
         print("Name :",self.name)
         print("Account No :",self.accno)
@@ -15,7 +18,7 @@ class BankAccount:
         print(f"{amount} deposited succssfully ")
 
     def getBalance(self):
-        return self.balance
+        return self.balance 
 
 
 abash_acc = BankAccount("Abhash", 123412415324, 20000)
@@ -27,3 +30,5 @@ sharath_acc = BankAccount("Sharath", 4121313123, 50000)
 print(sharath_acc.show_details())
 sharath_acc.deposit(5000)
 print("Current Blance ",sharath_acc.getBalance())
+
+del abash_acc
